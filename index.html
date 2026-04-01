@@ -469,6 +469,89 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════════════
+           ARTICLES SECTION
+           ═══════════════════════════════════════════════════════════════════════ */
+        .articles {
+            background: var(--bg-secondary);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            border-color: var(--border-light);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .article-platform {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--accent-glow);
+            color: var(--accent);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .article-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .article-date {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 16px;
+        }
+
+        .article-read-more {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .article-read-more:hover {
+            color: var(--accent-hover);
+        }
+
+        .articles-profiles {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════════
            ABOUT SECTION
            ═══════════════════════════════════════════════════════════════════════ */
         .about-content {
@@ -670,6 +753,10 @@
                 justify-content: center;
             }
 
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
             .footer-content {
                 flex-direction: column;
                 text-align: center;
@@ -812,6 +899,66 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="articles">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Articles</span>
+                <h2 class="section-title">Recent Writing</h2>
+                <p class="section-desc">Thoughts on Android development, machine learning, and building real products.</p>
+            </div>
+
+            <div class="articles-grid">
+                <a href="https://medium.com/@sayvortana.itc/i-built-an-ml-powered-android-app-in-1-8-kb-heres-why-i-turned-it-into-a-book-b4043abbd489" target="_blank" class="article-card">
+                    <span class="article-platform">Medium</span>
+                    <h3>I Built an ML-Powered Android App in 1.8 KB — Here's Why I Turned It Into a Book</h3>
+                    <span class="article-date">March 2026</span>
+                    <p class="article-excerpt">The story behind building a credit risk classifier that runs on-device, and why I wrote a book to teach other Android engineers to do the same.</p>
+                    <span class="article-read-more">Read article →</span>
+                </a>
+
+                <a href="https://pub.towardsai.net/from-cs230-theory-to-production-android-building-a-privacy-first-credit-risk-classifier-4d7259df00ec" target="_blank" class="article-card">
+                    <span class="article-platform">Towards AI</span>
+                    <h3>From CS230 Theory to Production Android: Building a Privacy-First Credit Risk Classifier</h3>
+                    <span class="article-date">February 2026</span>
+                    <p class="article-excerpt">Taking deep learning theory from Stanford's CS230 and applying it to a production Android app with on-device inference.</p>
+                    <span class="article-read-more">Read article →</span>
+                </a>
+
+                <a href="https://proandroiddev.com/android-studio-journeys-from-demo-to-enterprise-scale-testing-part-1-ab64f7da68e4" target="_blank" class="article-card">
+                    <span class="article-platform">ProAndroidDev</span>
+                    <h3>Android Studio Journeys: From Demo to Enterprise-Scale Testing</h3>
+                    <span class="article-date">September 2025</span>
+                    <p class="article-excerpt">A deep dive into Android Studio's Journeys feature and how to scale it from simple demos to enterprise-grade test coverage.</p>
+                    <span class="article-read-more">Read article →</span>
+                </a>
+
+                <a href="https://medium.com/@sayvortana.itc/breaking-the-monolith-a-practical-step-by-step-guide-to-modularizing-your-android-app-part-1-568b34e08d5f" target="_blank" class="article-card">
+                    <span class="article-platform">Medium</span>
+                    <h3>Breaking the Monolith: A Step-by-Step Guide to Modularizing Your Android App</h3>
+                    <span class="article-date">September 2025</span>
+                    <p class="article-excerpt">A practical 4-part series on modularizing Android apps, from identifying module boundaries to migrating shared code.</p>
+                    <span class="article-read-more">Read series →</span>
+                </a>
+            </div>
+
+            <div class="articles-profiles">
+                <a href="https://medium.com/@sayvortana.itc" target="_blank" class="store-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                    </svg>
+                    <span>All articles on Medium</span>
+                </a>
+                <a href="https://vsaytech.hashnode.dev/" target="_blank" class="store-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M22.351 8.019l-6.37-6.37a5.63 5.63 0 00-7.962 0l-6.37 6.37a5.63 5.63 0 000 7.962l6.37 6.37a5.63 5.63 0 007.962 0l6.37-6.37a5.63 5.63 0 000-7.962zM12 15.953a3.953 3.953 0 110-7.906 3.953 3.953 0 010 7.906z"/>
+                    </svg>
+                    <span>All articles on Hashnode</span>
+                </a>
             </div>
         </div>
     </section>
