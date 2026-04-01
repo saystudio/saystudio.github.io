@@ -716,6 +716,19 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-primary);
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+                gap: 16px;
+            }
+
+            .nav-links.open {
+                display: flex;
             }
 
             .mobile-menu-btn {
@@ -1056,19 +1069,19 @@
         </div>
     </footer>
 
-    <!-- Simple mobile menu toggle -->
+    <!-- Mobile menu toggle -->
     <script>
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.background = 'var(--bg-primary)';
-            navLinks.style.padding = '20px';
-            navLinks.style.borderBottom = '1px solid var(--border)';
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('open');
+        });
+
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('open');
+            });
         });
     </script>
 </body>
